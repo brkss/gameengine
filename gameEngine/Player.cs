@@ -17,10 +17,12 @@ namespace gameEngine
 
         public Player()
         {
+           
 
         }
         public Player(Vector2 inputPosition)
         {
+            
             position = inputPosition;
         }
 
@@ -31,7 +33,7 @@ namespace gameEngine
 
         public override void Load(ContentManager content)
         {
-            image = TextureLoader.Load("sprite", content);
+            image = TextureLoader.Load("char1", content);
             base.Load(content);
         }
 

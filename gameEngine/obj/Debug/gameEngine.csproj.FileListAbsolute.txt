@@ -7,3 +7,4 @@ C:\Users\Brahim\Documents\games\gameEngine\gameEngine\obj\Debug\gameEngine.exe
 C:\Users\Brahim\Documents\games\gameEngine\gameEngine\obj\Debug\gameEngine.pdb
 C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\sprite.png
 C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\char1.png
+C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\pixel.png

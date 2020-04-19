@@ -16,6 +16,8 @@ namespace gameEngine
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        public Map map = new Map();
+
         public List<GameObject> objects = new List<GameObject>();
 
       
@@ -47,6 +49,7 @@ namespace gameEngine
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             LoadLevel();
+            map.Load(Content);
         }
 
         /// <summary>
@@ -70,7 +73,9 @@ namespace gameEngine
             //This will clear what's on the screen each frame, if we don't clear the screen will look like a mess:
             GraphicsDevice.Clear(Color.CornflowerBlue);
             spriteBatch.Begin(SpriteSortMode.BackToFront,BlendState.AlphaBlend);
-             drawObjects();
+
+            drawObjects();
+            map.drawWalls(spriteBatch);
             spriteBatch.End();
             //Draw the things FNA handles for us underneath the hood:
             base.Draw(gameTime);
@@ -78,8 +83,12 @@ namespace gameEngine
 
         public void LoadLevel()
         {
-             objects.Add(new Player(new Vector2(640, 360)));
-             loadObjects();
+            //add walls
+
+            map.walls.Add(new Wall(new Rectangle(256, 256, 256, 256)));
+            map.walls.Add(new Wall(new Rectangle(0, 650, 1280, 128)));
+            objects.Add(new Player(new Vector2(640, 360)));
+            loadObjects();
         }
 
         public void loadObjects()
