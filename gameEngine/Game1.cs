@@ -76,6 +76,11 @@ namespace gameEngine
             base.Draw(gameTime);
         }
 
+        public void LoadLevel()
+        {
+            this.objects.Add(new Player(new Vector2(640, 360)));
+        }
+
         public void loadObjects()
         {
             for(int i = 0; i < this.objects.Count; i++)
