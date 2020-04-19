@@ -46,7 +46,7 @@ namespace gameEngine
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
+            LoadLevel();
         }
 
         /// <summary>
@@ -56,8 +56,8 @@ namespace gameEngine
         /// </summary>
         protected override void Update(GameTime gameTime)
         {
-            Input.Update(); 
-          
+            Input.Update();
+            updateObjects();
             //Update the things FNA handles for us underneath the hood:
             base.Update(gameTime);
         }
@@ -69,8 +69,8 @@ namespace gameEngine
         {
             //This will clear what's on the screen each frame, if we don't clear the screen will look like a mess:
             GraphicsDevice.Clear(Color.CornflowerBlue);
-            spriteBatch.Begin();
-            
+            spriteBatch.Begin(SpriteSortMode.BackToFront,BlendState.AlphaBlend);
+             drawObjects();
             spriteBatch.End();
             //Draw the things FNA handles for us underneath the hood:
             base.Draw(gameTime);
@@ -78,12 +78,13 @@ namespace gameEngine
 
         public void LoadLevel()
         {
-            this.objects.Add(new Player(new Vector2(640, 360)));
+             objects.Add(new Player(new Vector2(640, 360)));
+             loadObjects();
         }
 
         public void loadObjects()
         {
-            for(int i = 0; i < this.objects.Count; i++)
+            for(int i = 0; i <  objects.Count; i++)
             {
                 objects[i].Initialize();
                 objects[i].Load(Content);
@@ -92,7 +93,7 @@ namespace gameEngine
 
         public void updateObjects()
         {
-            for (int i = 0; i < this.objects.Count; i++)
+            for (int i = 0; i <  objects.Count; i++)
             {
                 objects[i].Update(objects);
                 
@@ -101,7 +102,7 @@ namespace gameEngine
 
         public void drawObjects()
         {
-            for (int i = 0; i < this.objects.Count; i++)
+            for (int i = 0; i <  objects.Count; i++)
             {
                 objects[i].Draw(spriteBatch);
 

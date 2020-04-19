@@ -18,7 +18,7 @@ namespace gameEngine
 
         protected Texture2D image;
         public Vector2 position;
-        public Color drawColor;
+        public Color drawColor = Color.White;
         public float scale = 1f, rotation = 0f;
         public float layerDepth = .5f;
         public bool active = true;
@@ -47,14 +47,14 @@ namespace gameEngine
         public virtual void Draw(SpriteBatch spriteBatch)
         {
             if(this.image != null && this.active) 
-                spriteBatch.Draw(this.image, this.position,null ,this.drawColor , this.rotation , Vector2.Zero ,this.scale,SpriteEffects.None,this.layerDepth);
+                spriteBatch.Draw(image, position,null ,drawColor , rotation , Vector2.Zero , scale,SpriteEffects.None,layerDepth);
         }
 
         private void calculateCenter()
         {
             if (image == null) return;
-            this.center.X = image.Width / 2;
-            this.center.Y = image.Height / 2;
+            center.X = image.Width / 2;
+            center.Y = image.Height / 2;
         }
 
     }
