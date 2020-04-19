@@ -1,0 +1,9 @@
+C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\gameEngine.exe.config
+C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\gameEngine.exe
+C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\gameEngine.pdb
+C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\FNA.dll
+C:\Users\Brahim\Documents\games\gameEngine\gameEngine\obj\Debug\gameEngine.csprojResolveAssemblyReference.cache
+C:\Users\Brahim\Documents\games\gameEngine\gameEngine\obj\Debug\gameEngine.exe
+C:\Users\Brahim\Documents\games\gameEngine\gameEngine\obj\Debug\gameEngine.pdb
+C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\sprite.png
+C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\char1.png
