@@ -14,7 +14,7 @@ namespace gameEngine
     {
         List<Bullet> bullets = new List<Bullet>();
 
-        const int numBullets = 20;
+        const int numBullets = 15;
 
         public FireCharacter()
         {
@@ -47,13 +47,13 @@ namespace gameEngine
             base.Update(objects, map);
         }
 
-        public void fire(Vector2 pos)
+        public void fire()
         {
             for (int i = 0; i < numBullets; i++)
             {
                 if (bullets[i].active == false )
                 {
-                    bullets[i].fire(this,position,direction);
+                    bullets[i].fire(this,position, direction);
                     break;
                 }
             }

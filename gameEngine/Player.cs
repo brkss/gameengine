@@ -62,7 +62,7 @@ namespace gameEngine
             }
             if (Input.KeyPressed(Keys.Space) == true)
             {
-                fire(position); 
+                fire(); 
                 
             }
                

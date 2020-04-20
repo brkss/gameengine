@@ -52,7 +52,7 @@ namespace gameEngine
         public void fire(Character inputOwner , Vector2 inputPosition , Vector2 inputDirection) 
         {
             owner = inputOwner;
-            position = inputDirection;
+            position = inputPosition;
             direction = inputDirection;
             active = true;
             destroyTimer = maxTimer;
