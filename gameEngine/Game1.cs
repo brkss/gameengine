@@ -104,7 +104,7 @@ namespace gameEngine
         {
             for (int i = 0; i <  objects.Count; i++)
             {
-                objects[i].Update(objects);
+                objects[i].Update(objects,map);
                 
             }
         }

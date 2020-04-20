@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace gameEngine
 {
-    class Player : GameObject
+    class Player : Character
     {
 
 
@@ -37,19 +37,19 @@ namespace gameEngine
             base.Load(content);
         }
 
-        public override void Update(List<GameObject> obects)
+        public override void Update(List<GameObject> objects,Map map)
         {
             this.checkInput();
-            base.Update(obects);
+            base.Update(objects,map);
         }
 
         private void checkInput()
         {
             // keys 
-            if (Input.IsKeyDown(Keys.Left)) position.X -= 5;
-            else if (Input.IsKeyDown(Keys.Right)) position.X += 5;
-            if (Input.IsKeyDown(Keys.Up)) position.Y -= 5;
-            else if (Input.IsKeyDown(Keys.Down)) position.Y += 5;
+            if (Input.IsKeyDown(Keys.Left)) moveLeft();
+            else if (Input.IsKeyDown(Keys.Right)) moveRight();
+            if (Input.IsKeyDown(Keys.Up)) moveUp() ;
+            else if (Input.IsKeyDown(Keys.Down)) moveDown() ;
 
         }
     }
