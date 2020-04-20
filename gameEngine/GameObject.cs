@@ -78,6 +78,11 @@ namespace gameEngine
                 spriteBatch.Draw(image, position,null ,drawColor , rotation , Vector2.Zero , scale,SpriteEffects.None,layerDepth);
         }
 
+        public virtual void bulletResponse()
+        {
+
+        }
+
         private void calculateCenter()
         {
             if (image == null) return;

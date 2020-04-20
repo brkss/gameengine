@@ -8,3 +8,13 @@ C:\Users\Brahim\Documents\games\gameEngine\gameEngine\obj\Debug\gameEngine.pdb
 C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\sprite.png
 C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\char1.png
 C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\pixel.png
+C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\128grid.png
+C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\audio\explosion.wav
+C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\audio\song.wav
+C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\background.png
+C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\bullet.png
+C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\decorplaceholder.png
+C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\enemy.png
+C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\orbsheet.png
+C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\spritesheet.png
+C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\fonts\Arial.xnb

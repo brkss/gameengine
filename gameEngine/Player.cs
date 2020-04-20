@@ -11,7 +11,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace gameEngine
 {
-    class Player : Character
+    class Player : FireCharacter
     {
 
 
@@ -39,17 +39,33 @@ namespace gameEngine
 
         public override void Update(List<GameObject> objects,Map map)
         {
-            this.checkInput();
+            this.checkInput(objects,map);
             base.Update(objects,map);
         }
 
-        private void checkInput()
+        private void checkInput(List<GameObject> objects, Map map)
         {
             // keys 
-            if (Input.IsKeyDown(Keys.Left)) moveLeft();
-            else if (Input.IsKeyDown(Keys.Right)) moveRight();
-            if (Input.IsKeyDown(Keys.Up)) moveUp() ;
-            else if (Input.IsKeyDown(Keys.Down)) moveDown() ;
+            
+            if(applyGravity == true)
+            {
+                if (Input.IsKeyDown(Keys.Left)) moveLeft();
+                else if (Input.IsKeyDown(Keys.Right)) moveRight();
+                if (Input.IsKeyDown(Keys.Up)) jumpUp(map);
+            }
+            else
+            {
+                if (Input.IsKeyDown(Keys.Left)) moveLeft();
+                else if (Input.IsKeyDown(Keys.Right)) moveRight();
+                if (Input.IsKeyDown(Keys.Up)) moveUp();
+                else if (Input.IsKeyDown(Keys.Down)) moveDown();
+            }
+            if (Input.KeyPressed(Keys.Space) == true)
+            {
+                fire(position); 
+                
+            }
+               
 
         }
     }

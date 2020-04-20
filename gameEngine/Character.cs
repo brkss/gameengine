@@ -24,7 +24,7 @@ namespace gameEngine
         const float maxFallVelocity = 32;
 
         protected bool jumping;
-        public static bool applyGravity = false ;
+        public static bool applyGravity = true ;
 
 
         public override void Initialize()
@@ -104,6 +104,18 @@ namespace gameEngine
             direction.Y = -1;
         }
 
+        protected bool jumpUp(Map map)
+        {
+            if (jumping == true)
+                return false ;
+            if (velocity.Y == 0 && OnGround(map) != Rectangle.Empty)
+            {
+                velocity.Y -= jumpVelocity;
+                jumping = true;
+                return true;
+            }
+            return false;
+        }
 
 
         protected virtual bool checkCollistions(Map map, List<GameObject> objects,bool xAxis)
@@ -114,14 +126,21 @@ namespace gameEngine
             int maxY = (int)maxSpeed;
             if (applyGravity)
                 maxY = (int)jumpVelocity;
-            if(xAxis == true && velocity.X != 0)
+            if (xAxis == true && velocity.X != 0)
             {
-                if(velocity.X > 0)
+                if (velocity.X > 0)
                     futerBoundingBox.X += maxX;
                 else
                     futerBoundingBox.X -= maxX;
             }
-            else if (xAxis == false && velocity.Y != 0)
+            else if (applyGravity == false && xAxis == false && velocity.Y != 0)
+            {
+                if (velocity.Y > 0)
+                    futerBoundingBox.Y += maxY;
+                else
+                    futerBoundingBox.Y -= maxY;
+            }
+            else if (applyGravity == true && xAxis == false && velocity.Y != gravity)
             {
                 if (velocity.Y > 0)
                     futerBoundingBox.Y += maxY;
@@ -176,5 +195,6 @@ namespace gameEngine
             return val;
         }
 
+        
     }
 }
