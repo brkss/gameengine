@@ -33,7 +33,6 @@ namespace gameEngine
         {
             if (active == false)
                 return;
-
             // Update movement  : 
             position += direction * speed;
 

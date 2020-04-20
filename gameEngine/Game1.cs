@@ -88,6 +88,7 @@ namespace gameEngine
             map.walls.Add(new Wall(new Rectangle(256, 256, 256, 256)));
             map.walls.Add(new Wall(new Rectangle(0, 650, 1280, 128)));
             objects.Add(new Player(new Vector2(256, 200)));
+            objects.Add(new Enemy(new Vector2(300, 120)));
             loadObjects();
         }
 
