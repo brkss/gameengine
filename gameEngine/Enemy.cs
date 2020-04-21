@@ -16,6 +16,8 @@ namespace gameEngine
         const int maxRespondTimer = 60;
 
         Random random = new Random();
+        SoundEffect eplosion;
+
 
         public Enemy() { }
 
@@ -35,6 +37,7 @@ namespace gameEngine
 
         public override void Load(ContentManager content)
         {
+            eplosion = content.Load<SoundEffect>("audio\\explosion");
             image = TextureLoader.Load("enemy", content);
             base.Load(content);
         }
@@ -56,7 +59,8 @@ namespace gameEngine
         {
             active = false;
             respandeTimer = maxRespondTimer;
-            // play sound effect or  
+            // play sound effect or
+            eplosion.Play(.5f,-1,-1);
             base.bulletResponse();
         }
 
