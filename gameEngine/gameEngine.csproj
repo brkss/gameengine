@@ -54,6 +54,7 @@
     <Compile Include="Enemy.cs" />
     <Compile Include="FireCharacter.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="GameHUD.cs" />
     <Compile Include="GameObject.cs" />
     <Compile Include="Map.cs" />
     <Compile Include="Player.cs" />

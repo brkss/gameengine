@@ -57,6 +57,7 @@ namespace gameEngine
 
         public override void bulletResponse()
         {
+            Player.score++; 
             active = false;
             respandeTimer = maxRespondTimer;
             // play sound effect or

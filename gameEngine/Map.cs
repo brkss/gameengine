@@ -96,10 +96,10 @@ namespace gameEngine
         {
             collidable = false;
         }
-        public Decore(Vector2 inputPosition , String imagePath,float inputDepth)
+        public Decore(Vector2 inputPosition , String imagePathInput,float inputDepth)
         {
             position = inputPosition;
-            imagePath = imagePath;
+            imagePath = imagePathInput;
             layerDepth = inputDepth;
             active = true;
             collidable = false;
@@ -107,7 +107,7 @@ namespace gameEngine
 
         public virtual void load(ContentManager content , String asset)
         {
-            image = TextureLoader.Load(asset, content);
+            image = TextureLoader.Load(imagePath, content);
             image.Name = asset;
 
             boundingBoxHeight = image.Height;

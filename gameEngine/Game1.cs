@@ -18,6 +18,8 @@ namespace gameEngine
 
         public Map map = new Map();
 
+        GameHUD gameHud = new GameHUD();
+
         public List<GameObject> objects = new List<GameObject>();
 
       
@@ -49,6 +51,7 @@ namespace gameEngine
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
             LoadLevel();
+            gameHud.load(Content);
             map.Load(Content);
         }
 
@@ -78,6 +81,9 @@ namespace gameEngine
             drawObjects();
             map.drawWalls(spriteBatch);
             spriteBatch.End();
+
+            gameHud.draw(spriteBatch);
+
             //Draw the things FNA handles for us underneath the hood:
             base.Draw(gameTime);
         }
@@ -122,6 +128,12 @@ namespace gameEngine
             for (int i = 0; i <  objects.Count; i++)
             {
                 objects[i].Draw(spriteBatch);
+
+            }
+
+            for (int i = 0; i < map.decores.Count; i++)
+            {
+                map.decores[i].Draw(spriteBatch);
 
             }
         }
