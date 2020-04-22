@@ -29,10 +29,10 @@ namespace gameEngine
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
 
-            graphics.PreferredBackBufferWidth = 1280;
-            graphics.PreferredBackBufferHeight = 720;
-            graphics.IsFullScreen = false;
-            graphics.ApplyChanges();
+            Resolution.Init(ref graphics);
+            Resolution.SetVirtualResolution(1280, 720);
+
+            Resolution.SetResolution(1280, 720,false);
         }
 
         /// <summary>
@@ -75,12 +75,17 @@ namespace gameEngine
         protected override void Draw(GameTime gameTime)
         {
             //This will clear what's on the screen each frame, if we don't clear the screen will look like a mess:
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-            spriteBatch.Begin(SpriteSortMode.BackToFront,BlendState.AlphaBlend);
 
+            GraphicsDevice.Clear(Color.CornflowerBlue);
+           
+            Resolution.BeginDraw();
+            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
+            //spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, SamplerState.LinearClamp, DepthStencilState.Default, RasterizerState.CullCounterClockwise, null, Resolution.getTransformationMatrix());
             drawObjects();
             map.drawWalls(spriteBatch);
             spriteBatch.End();
+
+            
 
             gameHud.draw(spriteBatch);
 
