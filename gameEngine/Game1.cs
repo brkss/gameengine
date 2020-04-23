@@ -32,7 +32,7 @@ namespace gameEngine
             Resolution.Init(ref graphics);
             Resolution.SetVirtualResolution(1280, 720);
 
-            Resolution.SetResolution(800, 600,false);
+            Resolution.SetResolution(1280, 720,false);
 
             // camera
             Camera.Initialize();
@@ -85,6 +85,7 @@ namespace gameEngine
             GraphicsDevice.Clear(Color.Black);
 
             Resolution.BeginDraw();
+            
             //spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
             spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, SamplerState.LinearClamp, null, RasterizerState.CullCounterClockwise, null, Camera.GetTransformMatrix());
             drawObjects();
