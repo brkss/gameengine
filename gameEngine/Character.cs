@@ -10,7 +10,7 @@ using Microsoft.Xna.Framework.Media;
 
 namespace gameEngine
 {
-    public class Character : GameObject
+    public class Character : AnimatedObject
     {
         public Vector2 velocity;
 
@@ -27,7 +27,7 @@ namespace gameEngine
         public static bool applyGravity = true ;
 
 
-        public override void Initialize()
+        public override void Initialize() 
         {
             velocity = Vector2.Zero;
             jumping = false;

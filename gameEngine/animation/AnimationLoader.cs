@@ -22,7 +22,7 @@ namespace gameEngine
         {
             //Load the XML data of the animation and return it:
             XmlSerializer serializer = new XmlSerializer(typeof(AnimationData));
-            TextReader reader = new StreamReader("Content\\Animations\\" + name);
+            TextReader reader = new StreamReader("Content\\animation\\" + name);
             AnimationData obj = (AnimationData)serializer.Deserialize(reader);
             reader.Close();
             return obj;

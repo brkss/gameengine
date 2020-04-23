@@ -37,6 +37,8 @@ namespace gameEngine
         public int gridX;
         public int gridY;
 
+        public List<Animation> animationList = new List<Animation>();
+
         public AnimationSet()
         {
 

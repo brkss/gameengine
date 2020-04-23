@@ -36,8 +36,18 @@ namespace gameEngine
 
         public override void Load(ContentManager content)
         {
-            image = TextureLoader.Load("char1", content);
+            image = TextureLoader.Load("spritesheet", content);
+
+            loadAnimation("player.anm", content);
+            changeAnimation(Animations.IdelLeft);
+
             base.Load(content);
+
+            boundingBowOffset.X = 0;
+            boundingBowOffset.Y = 0;
+
+            boundingBoxWidth = animationSet.width;
+            boundingBoxHeight = animationSet.height;
         }
 
         public override void Update(List<GameObject> objects,Map map)

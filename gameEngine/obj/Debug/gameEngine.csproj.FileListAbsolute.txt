@@ -18,3 +18,4 @@ C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\enemy.pn
 C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\orbsheet.png
 C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\spritesheet.png
 C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\fonts\Arial.xnb
+C:\Users\Brahim\Documents\games\gameEngine\gameEngine\bin\Debug\Content\animation\player.anm
