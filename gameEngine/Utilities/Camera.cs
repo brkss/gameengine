@@ -89,6 +89,7 @@ namespace gameEngine
                             * 0.5f, Resolution.VirtualHeight * 0.5f, 0));
 
             //Now combine the camera's matrix with the Resolution Manager's transform matrix to get our final working matrix:
+            //transformMatrix = transformMatrix ;
             transformMatrix = transformMatrix * Resolution.getTransformationMatrix();
 
             //Round the X and Y translation so the camera doesn't jerk as it moves:

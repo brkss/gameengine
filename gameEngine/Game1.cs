@@ -32,7 +32,11 @@ namespace gameEngine
             Resolution.Init(ref graphics);
             Resolution.SetVirtualResolution(1280, 720);
 
-            Resolution.SetResolution(1280, 720,false);
+            Resolution.SetResolution(800, 600,false);
+
+            // camera
+            Camera.Initialize();
+
         }
 
         /// <summary>
@@ -65,6 +69,7 @@ namespace gameEngine
             Input.Update();
             updateObjects();
             map.update(objects);
+            updateCamera();
             //Update the things FNA handles for us underneath the hood:
             base.Update(gameTime);
         }
@@ -76,11 +81,12 @@ namespace gameEngine
         {
             //This will clear what's on the screen each frame, if we don't clear the screen will look like a mess:
 
-            GraphicsDevice.Clear(Color.CornflowerBlue);
-           
+            GraphicsDevice.SetRenderTarget(null);
+            GraphicsDevice.Clear(Color.Black);
+
             Resolution.BeginDraw();
-            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
-            //spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, SamplerState.LinearClamp, DepthStencilState.Default, RasterizerState.CullCounterClockwise, null, Resolution.getTransformationMatrix());
+            //spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend);
+            spriteBatch.Begin(SpriteSortMode.BackToFront, BlendState.AlphaBlend, SamplerState.LinearClamp, null, RasterizerState.CullCounterClockwise, null, Camera.GetTransformMatrix());
             drawObjects();
             map.drawWalls(spriteBatch);
             spriteBatch.End();
@@ -141,6 +147,12 @@ namespace gameEngine
                 map.decores[i].Draw(spriteBatch);
 
             }
+        }
+
+        private void updateCamera()
+        {
+            if (objects.Count == 0) return;
+            Camera.Update(objects[0].position);
         }
     }
 }
