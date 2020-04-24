@@ -45,6 +45,8 @@ namespace gameEngine
 
             boundingBowOffset.X = 0;
             boundingBowOffset.Y = 0;
+            position.X = 0;
+            position.Y = 0;
 
             boundingBoxWidth = animationSet.width;
             boundingBoxHeight = animationSet.height;

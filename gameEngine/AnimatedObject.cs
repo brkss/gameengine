@@ -50,18 +50,18 @@ namespace gameEngine
         public override void Update(List<GameObject> obects, Map map)
         {
             base.Update(obects, map);
-            if(currentAnimation == null)
-            {
+            //if(currentAnimation == null)
+
                 updateAnimation();
-            }
+            
         }
 
         protected virtual void updateAnimation()
         {
-            /*
+            
             if (currentAnimation.animationOrder.Count > 1)
                 return;
-                */
+                
             ///bool test = currentAnimation.animationOrder.Count > 1;
             animationTimer -= 1;
 
@@ -154,6 +154,7 @@ namespace gameEngine
                 return string.Empty;
             StringBuilder newText = new StringBuilder(text.Length * 2);
             newText.Append(text[0]);
+            /*
             for (int i = 1; i < text.Length; i++)
             {
                 if (char.IsUpper(text[i]))
@@ -163,7 +164,9 @@ namespace gameEngine
                         newText.Append(' ');
                 newText.Append(text[i]);
             }
-            return newText.ToString();
+            */
+            //return newText.ToString();
+            return text;
         }
 
 
